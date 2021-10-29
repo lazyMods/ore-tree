@@ -34,7 +34,7 @@ public interface OreTreesAPI {
      *
      * @param oreLeavesBlock - the block to apply the block colors.
      */
-    default void applyOrelLeavesForBlockTint(OreLeavesBlock oreLeavesBlock) {
+    default void applyOreLeavesForBlockTint(OreLeavesBlock oreLeavesBlock) {
         //NOOP
     }
 
