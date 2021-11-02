@@ -1,6 +1,9 @@
 package net.lazyio.oretree.api;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.ResourceLocation;
+
+import java.util.List;
 
 public interface IOreTree {
 
@@ -47,9 +50,12 @@ public interface IOreTree {
     int blobRadius();
 
     /**
-     * When this is set to true, the ore tree will
-     * spawn in the Nether if the has netherrack to spawn;
-     * @return
+     * List of biomes registry keys were the trees can spawn.
+     *
+     * - if empty, the tree will spawn in all biomes.
+     * - if provided a list, the tree will only spawn in that list.
+     *
+     * @return the list
      */
-    boolean netherSpawn();
+    List<ResourceLocation> allowedInBiomes();
 }

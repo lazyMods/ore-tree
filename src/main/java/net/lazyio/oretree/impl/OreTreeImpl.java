@@ -3,6 +3,10 @@ package net.lazyio.oretree.impl;
 import net.lazyio.oretree.api.IOreTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.ResourceLocation;
+
+import java.util.Collections;
+import java.util.List;
 
 public class OreTreeImpl implements IOreTree {
 
@@ -11,15 +15,15 @@ public class OreTreeImpl implements IOreTree {
     private final Block ore;
     private final float chance;
     private final int blobRadius;
-    private boolean nether;
+    private List<ResourceLocation> biomes;
 
-    public OreTreeImpl(Block log, Block leaves, Block ore, float chance, int blobRadius, boolean nether) {
+    public OreTreeImpl(Block log, Block leaves, Block ore, float chance, int blobRadius, List<ResourceLocation> biomes) {
         this.log = log;
         this.leaves = leaves;
         this.ore = ore;
         this.chance = chance;
         this.blobRadius = blobRadius;
-        this.nether = nether;
+        this.biomes = biomes;
     }
 
     @Override
@@ -48,7 +52,7 @@ public class OreTreeImpl implements IOreTree {
     }
 
     @Override
-    public boolean netherSpawn() {
-        return this.nether;
+    public List<ResourceLocation> allowedInBiomes() {
+        return this.biomes;
     }
 }

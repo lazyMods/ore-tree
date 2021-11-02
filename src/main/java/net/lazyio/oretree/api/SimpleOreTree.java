@@ -2,6 +2,10 @@ package net.lazyio.oretree.api;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.ResourceLocation;
+
+import java.util.Collections;
+import java.util.List;
 
 public class SimpleOreTree implements IOreTree {
 
@@ -37,7 +41,7 @@ public class SimpleOreTree implements IOreTree {
     }
 
     @Override
-    public boolean netherSpawn() {
-        return true;
+    public List<ResourceLocation> allowedInBiomes() {
+        return Collections.emptyList();
     }
 }
