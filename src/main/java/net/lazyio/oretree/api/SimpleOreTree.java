@@ -35,4 +35,9 @@ public class SimpleOreTree implements IOreTree {
     public int blobRadius() {
         return 5;
     }
+
+    @Override
+    public boolean netherSpawn() {
+        return true;
+    }
 }

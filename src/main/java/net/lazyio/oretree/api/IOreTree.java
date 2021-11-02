@@ -45,4 +45,11 @@ public interface IOreTree {
      * @return sphere radius
      */
     int blobRadius();
+
+    /**
+     * When this is set to true, the ore tree will
+     * spawn in the Nether if the has netherrack to spawn;
+     * @return
+     */
+    boolean netherSpawn();
 }
