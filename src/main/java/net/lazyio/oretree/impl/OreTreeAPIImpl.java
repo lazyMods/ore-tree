@@ -4,9 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.lazyio.oretree.api.IOreTree;
 import net.lazyio.oretree.api.OreTreesAPI;
-import net.lazyio.oretree.api.SimpleOreTree;
 import net.lazyio.oretree.block.OreLeavesBlock;
-import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;
@@ -26,11 +24,6 @@ public class OreTreeAPIImpl implements OreTreesAPI {
     @Override
     public ImmutableList<OreLeavesBlock> getAppliedOreLeavesForTint() {
         return ImmutableList.copyOf(ORE_LEAVES_TINT);
-    }
-
-    @Override
-    public void registerOre(ResourceLocation id, BlockState ore) {
-        this.registerOre(id, new SimpleOreTree(ore));
     }
 
     @Override

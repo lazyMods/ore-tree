@@ -4,10 +4,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.lazyio.oretree.block.OreLeavesBlock;
 import net.lazyio.oretree.impl.OreTreeAPIImpl;
-import net.minecraft.block.BlockState;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.ResourceLocation;
 
+@SuppressWarnings("unused")
 public interface OreTreesAPI {
 
     /**
@@ -49,22 +49,6 @@ public interface OreTreesAPI {
     }
 
     /**
-     * Adds a {@link SimpleOreTree} that have most of the values
-     * already defined.
-     * <p>
-     * log -> OAK_LOG
-     * leaves -> OAK_LEAVES
-     * chance -> 1f
-     * sphereRadius -> 5
-     *
-     * @param id  - unique id, mainly for compatibility.
-     * @param ore - The block that is considered an ore.
-     */
-    default void registerOre(ResourceLocation id, BlockState ore) {
-        //NOOP
-    }
-
-    /**
      * Adds a new {@link IOreTree}.
      *
      * @param oreTree - an {@link IOreTree} implementation.
@@ -77,7 +61,6 @@ public interface OreTreesAPI {
     default ImmutableMap<ResourceLocation, IOreTree> getRegisteredOreTrees() {
         return ImmutableMap.of();
     }
-
 
     /**
      * Returns a list with all the registered {@link IOreTree}
